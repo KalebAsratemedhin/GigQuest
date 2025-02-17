@@ -1,0 +1,11 @@
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+import NavLink from './components/NavLink.vue';
+</script>
+
+<template>
+  
+  <NavLink />
+  <RouterView />
+  
+</template>
