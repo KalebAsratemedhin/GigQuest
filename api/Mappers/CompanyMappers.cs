@@ -12,6 +12,7 @@ namespace api.Mappers
         public static CompanyDto ToDto(this Company company)
         {
             return new CompanyDto{
+                Id = company.Id,
                 Name = company.Name,
                 Description = company.Description,
                 ContactEmail = company.ContactEmail,

@@ -8,6 +8,7 @@ namespace api.Mappers
         public static JobDto ToDto(this Job job)
         {
             return new JobDto{
+                Id = job.Id,
                 Title = job.Title,
                 Type = job.Type,
                 Description = job.Description,

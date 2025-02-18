@@ -3,6 +3,7 @@ namespace api.Dtos.Job
 {
     public class JobDto
     {
+        public int Id { get; set; }
         public required string Title { get; set; }
         public required string Type { get; set; }
         public required string Description { get; set; }
