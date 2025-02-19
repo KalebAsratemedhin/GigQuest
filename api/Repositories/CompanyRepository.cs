@@ -24,12 +24,12 @@ namespace api.Repositories
 
         public async Task<List<Company>> GetAll()
         {
-            return await _context.Companies.ToListAsync();
+            return await _context.Companies.Include(company => company.Jobs).ToListAsync();
         }
 
         public async Task<Company?> GetById(int Id)
         {
-            return await _context.Companies.FindAsync(Id);
+            return await _context.Companies.Include(company => company.Jobs).FirstOrDefaultAsync(company => company.Id == Id);
 
         }
     }

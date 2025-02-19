@@ -9,6 +9,7 @@ namespace api.Models
         public required string Salary { get; set; }
 
         public int CompanyId { get; set; }
+        
         public Company? Company { get; set; }
   
     }

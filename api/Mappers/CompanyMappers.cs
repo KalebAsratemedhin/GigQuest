@@ -9,9 +9,21 @@ namespace api.Mappers
 {
     public static class CompanyMappers
     {
-        public static CompanyDto ToDto(this Company company)
+        public static CompanyDto ToCompanyDto(this Company company)
         {
             return new CompanyDto{
+                Id = company.Id,
+                Name = company.Name,
+                Description = company.Description,
+                ContactEmail = company.ContactEmail,
+                ContactPhone = company.ContactPhone,
+                Jobs = company.Jobs.Select(job => job.ToBasicJobDto()).ToList()
+            };
+        }
+
+        public static BasicCompanyDto ToBasicCompanyDto(this Company company)
+        {
+            return new BasicCompanyDto{
                 Id = company.Id,
                 Name = company.Name,
                 Description = company.Description,

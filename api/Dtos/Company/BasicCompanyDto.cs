@@ -1,16 +1,16 @@
-
-using api.Dtos.Job;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace api.Dtos.Company
 {
-    public class CompanyDto
+    public class BasicCompanyDto
     {
         public int Id { get; set; }
         public required string Name { get; set; }
         public required string Description { get; set; }
         public required string ContactEmail { get; set; }
-        public required string ContactPhone { get; set; }
-
-        public List<BasicJobDto> Jobs {get; set;}
+        public required string ContactPhone { get; set; }   
     }
 }

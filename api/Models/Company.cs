@@ -13,7 +13,7 @@ namespace api.Models
         public required string ContactEmail { get; set; }
         public required string ContactPhone { get; set; }
 
-        public List<Job> Jobs = new List<Job>();
+        public List<Job> Jobs { get; set; } = new List<Job>();
 
     }
 }

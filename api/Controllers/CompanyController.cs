@@ -21,7 +21,7 @@ namespace api.Controllers
         public async Task<IActionResult> GetAll()
         {
             var Companies = await _companyRepo.GetAll();
-            var CompaniesDto = Companies.Select(company => company.ToDto());
+            var CompaniesDto = Companies.Select(company => company.ToCompanyDto());
 
             return Ok(CompaniesDto);
 
@@ -37,7 +37,7 @@ namespace api.Controllers
                 return NotFound();
             }
 
-            return Ok(company.ToDto());
+            return Ok(company.ToCompanyDto());
 
         }
 
@@ -46,7 +46,7 @@ namespace api.Controllers
         {
             var company = await _companyRepo.Create(createCompanyDto);
 
-            return CreatedAtAction(nameof(GetById), new {Id = company.Id}, company.ToDto());
+            return CreatedAtAction(nameof(GetById), new {Id = company.Id}, company.ToCompanyDto());
 
         }
     }
