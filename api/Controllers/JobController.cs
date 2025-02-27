@@ -20,7 +20,7 @@ namespace api.Controllers
         public async Task<IActionResult> GetAll()
         {
             var jobs = await _jobRepo.GetAll();
-            var jobsDto = jobs.Select(job => job.ToJobDto());
+            var jobsDto = jobs.Select(job => job.ToDto());
 
             return Ok(jobsDto);
 
@@ -36,7 +36,7 @@ namespace api.Controllers
                 return NotFound();
             }
 
-            return Ok(job.ToJobDto());
+            return Ok(job.ToDto());
 
         }
 
@@ -45,7 +45,7 @@ namespace api.Controllers
         {
             var job = await _jobRepo.Create(createJobDto);
 
-            return CreatedAtAction(nameof(GetById), new {Id = job.Id}, job.ToJobDto());
+            return CreatedAtAction(nameof(GetById), new {Id = job.Id}, job.ToDto());
 
         }
     }

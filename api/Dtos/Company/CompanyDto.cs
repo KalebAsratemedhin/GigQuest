@@ -11,6 +11,6 @@ namespace api.Dtos.Company
         public required string ContactEmail { get; set; }
         public required string ContactPhone { get; set; }
 
-        public List<BasicJobDto> Jobs {get; set;}
+        public List<JobDto> Jobs {get; set;}
     }
 }

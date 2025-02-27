@@ -11,7 +11,7 @@ namespace api.Dtos.Job
         public required string Description { get; set; }
         public required string Salary { get; set; }
         public int CompanyId { get; set; }
-        public BasicCompanyDto Company { get; set; }
+        public required CompanyDto Company { get; set; }
 
     }
 }

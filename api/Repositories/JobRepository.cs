@@ -17,8 +17,11 @@ namespace api.Repositories
         public async Task<Job> Create(CreateJobDto createJobDto)
         {
             var newJob = createJobDto.ToModel();
+            
             await _context.Jobs.AddAsync(newJob);
             await _context.SaveChangesAsync();
+
+            System.Console.WriteLine(newJob + "new job");
             return newJob;
         }
 

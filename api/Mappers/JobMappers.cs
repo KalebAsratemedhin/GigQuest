@@ -5,7 +5,7 @@ namespace api.Mappers
 {
     public static class JobMappers
     {
-        public static JobDto ToJobDto(this Job job)
+        public static JobDto ToDto(this Job job)
         {
             return new JobDto{
                 Id = job.Id,
@@ -13,18 +13,7 @@ namespace api.Mappers
                 Type = job.Type,
                 Description = job.Description,
                 Salary = job.Salary,
-                Company = job.Company.ToBasicCompanyDto()
-            };
-        }
-
-        public static BasicJobDto ToBasicJobDto(this Job job)
-        {
-            return new BasicJobDto{
-                Id = job.Id,
-                Title = job.Title,
-                Type = job.Type,
-                Description = job.Description,
-                Salary = job.Salary,
+                Company = job?.Company?.ToDto()
             };
         }
 
